@@ -25,4 +25,16 @@ public class ProductController {
     public ResponseEntity<Product> createProduct(@RequestBody Product product){
         return ResponseEntity.ok(productService.createProduct(product));
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Product> getProductById(@PathVariable String id){
+        return ResponseEntity.ok(productService.getProductById(id));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Product> updateProduct(@PathVariable String id, @RequestBody Product product){
+        return ResponseEntity.ok(productService.updateProduct(id, product));
+    } 
 }
+
+
