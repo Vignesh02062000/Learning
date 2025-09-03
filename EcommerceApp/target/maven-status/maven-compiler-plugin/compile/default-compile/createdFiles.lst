@@ -1,6 +1,0 @@
-processorMain\Main.class
-repository\ProductRepository.class
-service\ProductService.class
-entity\Product.class
-config\SecurityConfig.class
-controller\ProductController.class
