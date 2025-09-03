@@ -1,4 +1,4 @@
-package processorMain;
+package processor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

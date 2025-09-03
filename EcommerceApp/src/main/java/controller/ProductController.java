@@ -7,14 +7,17 @@ import org.springframework.web.bind.annotation.*;
 import service.ProductService;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/products")
-@RequiredArgsConstructor
 public class ProductController {
 
     private final ProductService productService;
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
 
     @GetMapping
     public ResponseEntity<List<Product>> getAllProducts(){
@@ -27,7 +30,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Product> getProductById(@PathVariable String id){
+    public ResponseEntity<Optional<Product>> getProductById(@PathVariable String id){
         return ResponseEntity.ok(productService.getProductById(id));
     }
 
