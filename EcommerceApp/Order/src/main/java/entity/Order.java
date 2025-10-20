@@ -7,19 +7,17 @@ import org.hibernate.annotations.UuidGenerator;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.List;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Document(collection = "products")
-public class Product {
+public class Order {
     @UuidGenerator
+    private String orderId;
+    private String userId;
     private String productId;
-    private String productName;
-    private double productCurrentPrice;
-    private double productDiscountPrice;
-    private String productDetails;
-    private  Enum productCategory;
-    private List<String> productImageUrls;
+    private double orderAmount;
+    private String orderDetails;
+    private Enum orderStatus;
+    private Enum paymentStatus;
 }

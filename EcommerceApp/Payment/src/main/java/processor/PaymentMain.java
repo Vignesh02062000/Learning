@@ -10,8 +10,8 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @ComponentScan(basePackages = {"controller", "service", "repository", "entity", "config"})
 @EnableMongoRepositories(basePackages = "repository")
 @EnableDiscoveryClient
-public class Main {
+public class PaymentMain {
     public static void main(String[] args) {
-        SpringApplication.run(Main.class, args);
+        SpringApplication.run(PaymentMain.class, args);
         }
     }

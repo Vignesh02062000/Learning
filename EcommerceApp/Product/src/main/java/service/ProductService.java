@@ -35,7 +35,7 @@ public class ProductService {
     public Product updateProduct (String id, Product product) {
         return productRepository.findById(id).map(existingProduct -> {
                     existingProduct.setProductName(product.getProductName());
-                    existingProduct.setProductPrice(product.getProductPrice());
+                    existingProduct.setProductCurrentPrice(product.getProductCurrentPrice());
                     existingProduct.setProductDetails(product.getProductDetails());
                     return productRepository.save(existingProduct);
                 })

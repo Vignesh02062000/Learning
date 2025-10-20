@@ -4,22 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.UuidGenerator;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Document(collection = "products")
-public class Product {
+public class Cart {
     @UuidGenerator
+    private String CartId;
+    private String UserId;
     private String productId;
-    private String productName;
-    private double productCurrentPrice;
-    private double productDiscountPrice;
-    private String productDetails;
-    private  Enum productCategory;
-    private List<String> productImageUrls;
 }
